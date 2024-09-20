@@ -13,7 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['192.168.0.243', '127.0.0.1']
+
+
 
 print(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
 print(f"SECRET_KEY: {SECRET_KEY}")
@@ -137,9 +139,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Папка для собранных статических файлов
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Убедись, что эта папка существует и содержит статические файлы
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 AUTH_USER_MODEL = 'users.User'
